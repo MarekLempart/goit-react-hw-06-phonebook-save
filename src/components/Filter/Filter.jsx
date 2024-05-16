@@ -1,7 +1,7 @@
-import { Input, Label } from './Filter.styled';
-import { setFilter } from 'redux/filterSlice'; // цей екшен викликає редюсер
 import { useDispatch, useSelector } from 'react-redux'; // хуки для роботи з редаксом
+import { setFilter } from 'redux/filterSlice'; // цей екшен викликає редюсер
 import { getFilter } from 'redux/selectors'; // селектори для роботи з редаксом
+import { Input, Label } from './Filter.styled';
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -18,5 +18,3 @@ export const Filter = () => {
     </Label>
   );
 };
-
-// Діма Берестень

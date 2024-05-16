@@ -1,5 +1,9 @@
+// contactsSlice.js
+
+// Importowanie funkcji `createSlice` z biblioteki Redux Toolkit.
 import { createSlice } from '@reduxjs/toolkit';
 
+// Początkowy stan aplikacji.
 const initialState = {
   items: [
     { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -9,20 +13,28 @@ const initialState = {
   ],
 };
 
+// Tworzenie slice'a dla kontaktów za pomocą funkcji `createSlice`.
 const contactsSlice = createSlice({
+  // Nazwa slice'a.
   name: 'contacts',
+  // Początkowy stan.
   initialState,
+  // Reducery dla slice'a, zawierający funkcje do dodawania i usuwania kontaktów.
   reducers: {
+    // Reducer do dodawania kontaktu. Przyjmuje aktualny stan i akcję, która zawiera nowy kontakt.
     addContact: (state, action) => {
-      state.items = [...state.items, action.payload];
+      state.items = [...state.items, action.payload]; // Dodawanie nowego kontaktu do listy kontaktów.
     },
+    // Reducer do usuwania kontaktu. Przyjmuje aktualny stan i akcję, która zawiera id kontaktu do usunięcia.
     deleteContact: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload); // видаляємо елемент з масиву по id
+      // Usuwanie kontaktu z listy kontaktów na podstawie przekazanego id.
+      state.items = state.items.filter(item => item.id !== action.payload);
     },
   },
 });
 
+// Eksportowanie akcji `addContact` i `deleteContact` z obiektu zawierającego akcje slice'a.
 export const { addContact, deleteContact } = contactsSlice.actions;
-export const contactsReducer = contactsSlice.reducer;
 
-// Діма Берестень
+// Eksportowanie reducer'a z slice'a, który będzie obsługiwał akcje związane z kontaktami.
+export const contactsReducer = contactsSlice.reducer;

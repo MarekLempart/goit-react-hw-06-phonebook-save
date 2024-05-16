@@ -1,8 +1,8 @@
+import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify'; // це бібліотека для виведення повідомлень
 import { addContact } from 'redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
-import { nanoid } from 'nanoid';
-import { toast } from 'react-toastify'; // це бібліотека для виведення повідомлень
 import { Form, Input, Label, SubmitButton } from './ContactForm.styled';
 
 export const ContactForm = () => {
@@ -62,5 +62,3 @@ export const ContactForm = () => {
     </Form>
   );
 };
-
-// Діма Берестень

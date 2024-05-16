@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, getFilter } from 'redux/selectors';
 import { deleteContact } from 'redux/contactsSlice';
+import { getContacts, getFilter } from 'redux/selectors';
 import { Button, Item, List, Text } from './ContactList.styled'; // стилі компонента
 
 export const ContactList = () => {
@@ -38,5 +38,3 @@ export const ContactList = () => {
     </List>
   );
 };
-
-// Діма Берестень
